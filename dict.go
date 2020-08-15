@@ -7,7 +7,8 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/ikawaha/kagome-dict-ipa-neologd/internal/data"
+	data0 "github.com/ikawaha/kagome-dict-ipa-neologd/internal/mod0"
+	data1 "github.com/ikawaha/kagome-dict-ipa-neologd/internal/mod1"
 	"github.com/ikawaha/kagome/v2/dict"
 )
 
@@ -66,17 +67,29 @@ func DictShrink() *dict.Dict {
 }
 
 func loadDict(full bool) (d *dict.Dict) {
-	pieces := data.AssetNames()
-	sort.Strings(pieces)
+	rs := make([]SizeReaderAt, 0, 500)
 
-	rs := make([]SizeReaderAt, 0, len(pieces))
+	// mod0
+	pieces := data0.AssetNames()
+	sort.Strings(pieces)
 	for _, v := range pieces {
-		b, err := data.Asset(v)
+		b, err := data0.Asset(v)
 		if err != nil {
 			panic(fmt.Errorf("assert error, %q, %v", v, err))
 		}
 		rs = append(rs, bytes.NewReader(b))
 	}
+	// mod1
+	pieces = data1.AssetNames()
+	sort.Strings(pieces)
+	for _, v := range pieces {
+		b, err := data1.Asset(v)
+		if err != nil {
+			panic(fmt.Errorf("assert error, %q, %v", v, err))
+		}
+		rs = append(rs, bytes.NewReader(b))
+	}
+
 	r := NewMultiSizeReaderAt(rs...)
 	zr, err := zip.NewReader(r, r.Size())
 	if err != nil {

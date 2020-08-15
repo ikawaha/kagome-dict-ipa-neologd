@@ -2,6 +2,7 @@ package main
 
 import (
 	"archive/zip"
+	"compress/flate"
 	"flag"
 	"fmt"
 	"io"
@@ -122,6 +123,10 @@ func Run(args []string) error {
 	defer f.Close()
 	zw := zip.NewWriter(f)
 	defer zw.Close()
+	// Register a custom Deflate compressor.
+	zw.RegisterCompressor(zip.Deflate, func(out io.Writer) (io.WriteCloser, error) {
+		return flate.NewWriter(out, flate.BestCompression)
+	})
 	if err := dict.Save(zw); err != nil {
 		return fmt.Errorf("save dict failed: %v", err)
 
