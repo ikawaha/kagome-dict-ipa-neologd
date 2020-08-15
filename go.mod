@@ -8,7 +8,3 @@ require (
 	github.com/ikawaha/kagome/v2 v2.0.4
 )
 
-replace (
-	github.com/ikawaha/kagome-dict-ipa-neologd/module/mod0 => ./module/mod0
-	github.com/ikawaha/kagome-dict-ipa-neologd/module/mod1 => ./module/mod1
-)
