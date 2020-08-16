@@ -7,8 +7,8 @@ import (
 	"sort"
 	"sync"
 
-	data0 "github.com/ikawaha/kagome-dict-ipa-neologd/module/mod0"
-	data1 "github.com/ikawaha/kagome-dict-ipa-neologd/module/mod1"
+	data0 "github.com/ikawaha/kagome-dict-ipa-neologd/internal/mod0"
+	data1 "github.com/ikawaha/kagome-dict-ipa-neologd/internal/mod1"
 	"github.com/ikawaha/kagome/v2/dict"
 )
 

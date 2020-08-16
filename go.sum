@@ -4,10 +4,10 @@ github.com/ikawaha/kagome-dict-ipa v0.0.0-20200726115736-178e72a81257/go.mod h1:
 github.com/ikawaha/kagome-dict-ipa v0.0.0-20200804124920-1dc0b3c7045b/go.mod h1:u15SwzHPvT+/UVJfl/rYUcBm1mJI6zGk/U5SBG3ZbQ8=
 github.com/ikawaha/kagome-dict-ipa v1.0.0 h1:0WbjBDxE6fRJAZXBdCr/WRL0XDjSsyebVyNcs7j28bM=
 github.com/ikawaha/kagome-dict-ipa v1.0.0/go.mod h1:LWSyGsAY7pbu4YjOrP1dqd/XkxYU3e++6bimFI5PZu8=
-github.com/ikawaha/kagome-dict-ipa-neologd/module/mod0 v0.0.1 h1:r13iJi4z7fhMCG/n6bN2U8jlxlYKkoszwDEB254oq2I=
-github.com/ikawaha/kagome-dict-ipa-neologd/module/mod0 v0.0.1/go.mod h1:r8dnAJwOs1DPaCN1EHAljr2st6zqpel1FkPg73uRYEc=
-github.com/ikawaha/kagome-dict-ipa-neologd/module/mod1 v0.0.1 h1:sYjfXKhn2undYBWitnRjW/0Xwl4MKXfnwRDxjyMDSXM=
-github.com/ikawaha/kagome-dict-ipa-neologd/module/mod1 v0.0.1/go.mod h1:KTVdZeilDLnLc5eJnuwJgSq1P09/r7jgXsdOicTnelk=
+github.com/ikawaha/kagome-dict-ipa-neologd/internal/mod0 v0.0.1 h1:GtjhNaqTJhDTGKxnI5an61mWGH1WckX8Gnz+LzrmUEI=
+github.com/ikawaha/kagome-dict-ipa-neologd/internal/mod0 v0.0.1/go.mod h1:tkesu1EyCJ/s+5FlAGLO2tsk1nk2v6KIPXmMocf+OZg=
+github.com/ikawaha/kagome-dict-ipa-neologd/internal/mod1 v0.0.1 h1:AI8ewgqaQtOKDUOUE4GKjd41lPSjpUkQdBi6F8NwQzA=
+github.com/ikawaha/kagome-dict-ipa-neologd/internal/mod1 v0.0.1/go.mod h1:E22PzCqgE2ir2vdBdJkhr7lF0T1iw2l8zuimsqW9BkY=
 github.com/ikawaha/kagome-dict-ko v0.0.0-20200724121725-e6b465841a68/go.mod h1:/kLtLug0LloVS47A44RupWUh2Q/zwP+55CArqbrVwe8=
 github.com/ikawaha/kagome-dict-ko v0.0.0-20200726063707-3f48298e8eab/go.mod h1:DSfgvD+9rV+R1w9WRxOR4HI6CpLT1WuI4/xNW/pVPhI=
 github.com/ikawaha/kagome-dict-ko v0.0.0-20200726112204-f195be89da66/go.mod h1:KGyad1tMJCwZSVrWrmwHOjQQfhPU9ERikVTEVqb6Pzg=
