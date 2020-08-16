@@ -7,7 +7,7 @@ intermediate_prefix="ipa-neologd-dict."
 testdata_dir="../testdata"
 dict="${testdata_dir}/ipa-neologd.dict"
 dst_pkg=data
-dst_dir="../module"
+dst_dir="../internal"
 modules=()
 
 
@@ -50,7 +50,7 @@ function build_packages() {
   do
     mkdir -p ${dst_dir}/${m}
     go-bindata -o ${dst_dir}/${m}/bindata.go -nocompress -separate -pkg=${dst_pkg} ${intermediate_dir}/${m}
-    echo "module github.com/ikawaha/kagome-dict-ipa-neologd/module/${m}\n\ngo 1.15" > ${dst_dir}/${m}/go.mod
+    echo "module github.com/ikawaha/kagome-dict-ipa-neologd/internal/${m}\n\ngo 1.15" > ${dst_dir}/${m}/go.mod
   done
   rm -rf ${intermediate_dir}
 }
