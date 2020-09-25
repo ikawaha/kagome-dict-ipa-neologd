@@ -17,7 +17,7 @@ func dictMod0IpaNeologdDictEt() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "dict/mod0/ipa-neologd-dict.et", size: 524288, mode: os.FileMode(420), modTime: time.Unix(1597581578, 0)}
+	info := bindataFileInfo{name: "dict/mod0/ipa-neologd-dict.et", size: 524288, mode: os.FileMode(420), modTime: time.Unix(1601000133, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
