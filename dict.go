@@ -9,7 +9,7 @@ import (
 
 	data0 "github.com/ikawaha/kagome-dict-ipa-neologd/internal/mod0"
 	data1 "github.com/ikawaha/kagome-dict-ipa-neologd/internal/mod1"
-	"github.com/ikawaha/kagome/v2/dict"
+	"github.com/ikawaha/kagome-dict/dict"
 )
 
 type FeatureIndex = int
@@ -67,7 +67,7 @@ func DictShrink() *dict.Dict {
 }
 
 func loadDict(full bool) (d *dict.Dict) {
-	rs := make([]SizeReaderAt, 0, 500)
+	rs := make([]dict.SizeReaderAt, 0, 500)
 
 	// mod0
 	pieces := data0.AssetNames()
@@ -90,7 +90,7 @@ func loadDict(full bool) (d *dict.Dict) {
 		rs = append(rs, bytes.NewReader(b))
 	}
 
-	r := NewMultiSizeReaderAt(rs...)
+	r := dict.MultiSizeReaderAt(rs...)
 	zr, err := zip.NewReader(r, r.Size())
 	if err != nil {
 		panic(err)

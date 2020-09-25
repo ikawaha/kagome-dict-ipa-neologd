@@ -1,11 +1,9 @@
 package ipaneologd
 
 import (
-	"reflect"
 	"testing"
 
-	"github.com/ikawaha/kagome/v2/dict"
-	"github.com/ikawaha/kagome/v2/tokenizer"
+	"github.com/ikawaha/kagome-dict/dict"
 )
 
 const (
@@ -65,6 +63,7 @@ func Test_ContentsMeta(t *testing.T) {
 	}
 }
 
+/*
 func Test_InflectionalType(t *testing.T) {
 	tnz, err := tokenizer.New(Dict())
 	if err != nil {
@@ -225,3 +224,4 @@ func Test_FeatureIndex(t *testing.T) {
 		}
 	}
 }
+*/
