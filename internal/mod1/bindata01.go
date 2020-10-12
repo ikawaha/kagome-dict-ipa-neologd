@@ -17,7 +17,7 @@ func dictMod1IpaNeologdDictJq() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "dict/mod1/ipa-neologd-dict.jq", size: 524288, mode: os.FileMode(420), modTime: time.Unix(1601000133, 0)}
+	info := bindataFileInfo{name: "dict/mod1/ipa-neologd-dict.jq", size: 524288, mode: os.FileMode(420), modTime: time.Unix(1602512784, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
