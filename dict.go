@@ -3,12 +3,11 @@ package ipaneologd
 import (
 	"archive/zip"
 	"bytes"
-	"fmt"
+	"embed"
+	"io/fs"
 	"sort"
 	"sync"
 
-	data0 "github.com/ikawaha/kagome-dict-ipa-neologd/internal/mod0"
-	data1 "github.com/ikawaha/kagome-dict-ipa-neologd/internal/mod1"
 	"github.com/ikawaha/kagome-dict/dict"
 )
 
@@ -66,30 +65,23 @@ func DictShrink() *dict.Dict {
 	return shrink.dict
 }
 
+//go:embed dict/*
+var asset embed.FS
+
 func loadDict(full bool) (d *dict.Dict) {
-	rs := make([]dict.SizeReaderAt, 0, 500)
-
-	// mod0
-	pieces := data0.AssetNames()
-	sort.Strings(pieces)
-	for _, v := range pieces {
-		b, err := data0.Asset(v)
+	files, err := fs.Glob(asset, "dict/*")
+	if err != nil {
+		panic(err)
+	}
+	sort.Strings(files)
+	rs := make([]dict.SizeReaderAt, 0, len(files))
+	for _, v := range files {
+		b, err := fs.ReadFile(asset, v)
 		if err != nil {
-			panic(fmt.Errorf("assert error, %q, %v", v, err))
+			panic(err)
 		}
 		rs = append(rs, bytes.NewReader(b))
 	}
-	// mod1
-	pieces = data1.AssetNames()
-	sort.Strings(pieces)
-	for _, v := range pieces {
-		b, err := data1.Asset(v)
-		if err != nil {
-			panic(fmt.Errorf("assert error, %q, %v", v, err))
-		}
-		rs = append(rs, bytes.NewReader(b))
-	}
-
 	r := dict.MultiSizeReaderAt(rs...)
 	zr, err := zip.NewReader(r, r.Size())
 	if err != nil {
